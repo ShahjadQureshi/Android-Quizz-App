@@ -30,18 +30,22 @@ public class MainActivity extends AppCompatActivity {
         Yes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(index<= questions.length-1) {
+                if(index <= questions.length-1) {
                     if (answers[index] == true) {
                         score++;
                     }
                     index++;
 
-                    if(index<= questions.length-1){
+                    if(index <= questions.length-1){
                         question.setText(questions[index]);
                     }
                     else{
                         Toast.makeText(MainActivity.this, "You're Score is: " + score, Toast.LENGTH_SHORT).show();
                     }
+                }
+                
+               else{
+                    Toast.makeText(MainActivity.this, "You're Score is: " + score + "/" + questions.length , Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -49,19 +53,22 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                  if(index<= questions.length-1) {
+                  if(index <= questions.length-1) {
                     if (answers[index] == false) {
                        score++;
                       }
                        index++;
 
-                     if(index<= questions.length-1){
+                     if(index <= questions.length-1){
                          question.setText(questions[index]);
                        }
                      else{
-                       Toast.makeText(MainActivity.this, "You're Score is: " + score, Toast.LENGTH_SHORT).show();
-                        }
-                     }
+                    Toast.makeText(MainActivity.this, "You're Score is: " + score + "/" + questions.length , Toast.LENGTH_SHORT).show();
+                      }
+                    }
+                   else{
+                     Toast.makeText(MainActivity.this, "Restart the app to play again!" , Toast.LENGTH_SHORT).show();
+                    }
                  }
            });
     }
